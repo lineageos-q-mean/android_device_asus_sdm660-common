@@ -194,6 +194,10 @@ service ppd /system/vendor/bin/mm-pp-dpps
     socket pps stream 0660 system system
     disabled
 
+on property:sys.boot_completed=1
+    # Disable native stats collection service
+    stop statsd
+
 on property:init.svc.surfaceflinger=stopped
     stop ppd
 

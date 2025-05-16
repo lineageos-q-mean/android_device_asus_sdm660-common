@@ -189,6 +189,10 @@ PRODUCT_PACKAGES += \
     sap.conf \
     xtwifi.conf
 
+# HarmonyMusic
+PRODUCT_PACKAGES += \
+    HarmonyMusic
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \

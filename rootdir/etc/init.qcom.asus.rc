@@ -28,8 +28,10 @@
 #
 
 on early-boot
-    chown system system /dev/input/event4  # stk3x3x-light
-    chown system system /dev/input/event5  # stk3x3x-proximity
+    chown system system /dev/input/event3
+    chown system system /dev/input/event4
+    chown system system /dev/input/event5
+    chown system system /dev/input/event6
 
 on boot
     chown system system /sys/class/power_supply/battery/charging_enabled

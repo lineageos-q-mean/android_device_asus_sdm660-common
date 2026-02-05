@@ -4,7 +4,7 @@
 #include <android/hardware/usb/1.0/IUsb.h>
 #include <hidl/MQDescriptor.h>
 #include <hidl/Status.h>
-#include <log/log.h>
+#include <utils/Log.h>
 
 #ifdef LOG_TAG
 #undef LOG_TAG
@@ -32,15 +32,15 @@ using ::android::hardware::Void;
 using ::android::sp;
 
 struct Usb : public IUsb {
-    Usb();
     Return<void> switchRole(const hidl_string& portName, const PortRole& role) override;
     Return<void> setCallback(const sp<IUsbCallback>& callback) override;
     Return<void> queryPortStatus() override;
 
     sp<IUsbCallback> mCallback;
+    pthread_mutex_t mLock = PTHREAD_MUTEX_INITIALIZER;
+
     private:
         pthread_t mPoll;
-        pthread_mutex_t mLock = PTHREAD_MUTEX_INITIALIZER;
 };
 
 }  // namespace implementation

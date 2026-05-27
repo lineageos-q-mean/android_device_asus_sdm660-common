@@ -4,3 +4,6 @@ type vendor_fingerprint_prop, property_type;
 
 # Dolby
 type vendor_dolby_loglevel_prop, property_type;
+
+# Power
+type power_prop, property_type;

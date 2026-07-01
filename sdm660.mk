@@ -188,9 +188,9 @@ PRODUCT_PACKAGES += \
     sap.conf \
     xtwifi.conf
 
-# HarmonyMusic
+# Metrolist
 PRODUCT_PACKAGES += \
-    HarmonyMusic
+    Metrolist
 
 # Health
 PRODUCT_PACKAGES += \
